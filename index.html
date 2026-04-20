@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <title>AR Business Card</title>
 
-  <!-- Mobile viewport fix -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <!-- MindAR (ONLY this one) -->
+  <!-- MindAR (ONLY ONE) -->
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
 
   <!-- A-Frame -->
@@ -21,6 +20,7 @@
       width: 100%;
       height: 100%;
       background: black;
+      font-family: Arial, sans-serif;
     }
 
     a-scene {
@@ -31,9 +31,18 @@
       height: 100vh;
     }
 
-    /* Optional: prevents animation glitches */
+    /* Your original intent preserved */
     #logo-renderer {
       animation: none !important;
+    }
+
+    /* Optional overlay container if you were using HTML UI */
+    #logo-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
     }
   </style>
 </head>
@@ -51,26 +60,30 @@
     <!-- Camera -->
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-    <!-- Target -->
+    <!-- AR Target -->
     <a-entity mindar-image-target="targetIndex: 0">
 
-      <!-- Replace this with your real content -->
-      <a-plane
-        position="0 0 0"
-        height="0.6"
-        width="1"
-        color="#0077ff"
-        opacity="0.8"
-      ></a-plane>
+      <!-- 🔵 THIS is where your animation MUST live -->
+      <a-entity id="logo-renderer" position="0 0 0">
 
-      <!-- Example text -->
-      <a-text
-        value="Your AR Business Card"
-        position="0 0 0.1"
-        align="center"
-        color="#FFF"
-        width="2"
-      ></a-text>
+        <!-- TEMP visible test (you can replace with your animation) -->
+        <a-plane
+          position="0 0 0"
+          width="1"
+          height="0.6"
+          color="#0a84ff"
+          opacity="0.85"
+        ></a-plane>
+
+        <a-text
+          value="Todd R. Hardeman"
+          position="0 0 0.1"
+          align="center"
+          color="#ffffff"
+          width="2"
+        ></a-text>
+
+      </a-entity>
 
     </a-entity>
 
