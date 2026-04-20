@@ -269,13 +269,13 @@
 
 <!-- ══ AR SCENE ════════════════════════════════════════════════ -->
 <a-scene
-  id="ar-scene"
-  mindar-image="imageTargetSrc: card.mind; autoStart: false; uiLoading: no; uiScanning: no; uiError: no;"
+  mindar-image="imageTargetSrc: card.mind; autoStart: true;"
+  embedded
   color-space="sRGB"
-  renderer="colorManagement: true; physicallyCorrectLights: true"
+  renderer="colorManagement: true"
   vr-mode-ui="enabled: false"
   device-orientation-permission-ui="enabled: false"
-  style="display:none;">
+>
 
   <a-assets>
     <!-- The animated logo will be rendered onto a canvas and used as a texture -->
