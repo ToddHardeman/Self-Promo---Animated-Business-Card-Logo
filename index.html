@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes">
 <title>Todd R. Hardeman — AR Experience</title>
 
 <!-- MindAR + A-Frame -->
@@ -1143,7 +1142,23 @@
   animation-delay: 2.15s;
   transform-origin: 50% 50%;
 }
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
 
+  a-scene {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+</style>
   /* Override the #logo-container float for the renderer */
   #logo-renderer {
     animation: none !important;
